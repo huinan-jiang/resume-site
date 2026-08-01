@@ -283,19 +283,54 @@
       ],
       screens: [
         {
-          src: 'assets/images/projects/training/screen-1.png',
-          title: '服务场景',
-          text: '移动端进入服务话术陪练。'
+          src: 'assets/images/projects/training/slide-01.png',
+          title: '',
+          text: ''
         },
         {
-          src: 'assets/images/projects/training/screen-2.png',
-          title: '对话练习',
-          text: '模拟真实顾客问题，进行逐轮回应。'
+          src: 'assets/images/projects/training/slide-02.png',
+          title: '',
+          text: ''
         },
         {
-          src: 'assets/images/projects/training/screen-3.png',
-          title: '反馈建议',
-          text: '根据回答给出服务话术反馈。'
+          src: 'assets/images/projects/training/slide-03.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-04.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-05.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-06.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-07.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-08.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-09.png',
+          title: '',
+          text: ''
+        },
+        {
+          src: 'assets/images/projects/training/slide-10.png',
+          title: '',
+          text: ''
         }
       ],
       githubUrl: 'https://github.com/huinan-jiang/training'
@@ -390,6 +425,27 @@
         '量化结果：200+ 观众中 69 人愿意试用。',
         '结果判断：案例证明的是把多模态情绪信号拆成可执行练习链路，而不是泛泛情绪陪伴。'
       ],
+      caseStudy: {
+        actionFlow: {
+          title: '关键动作',
+          image: 'assets/images/projects/frame/architecture.png',
+          imageAlt: '帧我软件架构图',
+          steps: [
+            {
+              title: '三层引导',
+              text: '把一次情绪表达拆成环境关联式事件探索、情绪体验细化曲线、情绪认知与分类，控制在可完成的短流程里。'
+            },
+            {
+              title: '多模态识别',
+              text: '用户录制视频后，系统并行处理音频和画面：提取音频、语音转文字与情绪标注，同时做人脸检测和面部情绪识别。'
+            },
+            {
+              title: '记忆与建议',
+              text: '合并情绪分析结果后生成记忆摘要，保存生活记忆，并基于主导情绪生成情绪建议和可继续行动的结果。'
+            }
+          ]
+        }
+      },
       trialUrl: 'assets/videos/alcheme/demo.mp4',
       trialLabel: '观看 Demo',
       githubUrl: 'https://github.com/huinan-jiang/alcheme3.0'
@@ -749,6 +805,55 @@
       return;
     }
 
+    if (caseStudy.actionFlow) {
+      const actionSection = document.createElement('section');
+      actionSection.className = 'project-modal__deep-section';
+
+      const heading = document.createElement('h3');
+      heading.className = 'project-modal__deep-title';
+      heading.textContent = caseStudy.actionFlow.title || '关键动作';
+
+      const flow = document.createElement('div');
+      flow.className = 'project-modal__action-flow';
+
+      if (caseStudy.actionFlow.image) {
+        const imageWrap = document.createElement('div');
+        imageWrap.className = 'project-modal__action-flow-image';
+
+        const image = document.createElement('img');
+        image.src = caseStudy.actionFlow.image;
+        image.alt = caseStudy.actionFlow.imageAlt || caseStudy.actionFlow.title || '项目动作图';
+        image.loading = 'lazy';
+
+        imageWrap.appendChild(image);
+        flow.appendChild(imageWrap);
+      }
+
+      if (Array.isArray(caseStudy.actionFlow.steps) && caseStudy.actionFlow.steps.length) {
+        const steps = document.createElement('div');
+        steps.className = 'project-modal__action-flow-steps';
+
+        caseStudy.actionFlow.steps.forEach(step => {
+          const item = document.createElement('article');
+          item.className = 'project-modal__action-flow-step';
+
+          const title = document.createElement('h4');
+          title.textContent = step.title;
+
+          const text = document.createElement('p');
+          text.textContent = step.text;
+
+          item.append(title, text);
+          steps.appendChild(item);
+        });
+
+        flow.appendChild(steps);
+      }
+
+      actionSection.append(heading, flow);
+      element.appendChild(actionSection);
+    }
+
     if (Array.isArray(caseStudy.insights) && caseStudy.insights.length) {
       const insightSection = document.createElement('section');
       insightSection.className = 'project-modal__deep-section';
@@ -1071,20 +1176,30 @@
 
       const image = document.createElement('img');
       image.src = screen.src;
-      image.alt = screen.title;
+      image.alt = screen.alt || screen.title || '项目截图';
       image.loading = 'lazy';
 
       const body = document.createElement('div');
       body.className = 'project-modal__screen-body';
 
-      const title = document.createElement('h3');
-      title.textContent = screen.title;
+      if (screen.title) {
+        const title = document.createElement('h3');
+        title.textContent = screen.title;
+        body.appendChild(title);
+      }
 
-      const text = document.createElement('p');
-      text.textContent = screen.text;
+      if (screen.text) {
+        const text = document.createElement('p');
+        text.textContent = screen.text;
+        body.appendChild(text);
+      }
 
-      body.append(title, text);
-      item.append(image, body);
+      item.appendChild(image);
+      if (body.children.length) {
+        item.appendChild(body);
+      } else {
+        item.classList.add('project-modal__screen--image-only');
+      }
       grid.appendChild(item);
     });
 
