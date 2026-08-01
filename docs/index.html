@@ -17,7 +17,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home-align2.css?v=20260722-bird-first-frame-action-local">
+  <link rel="stylesheet" href="css/home-align2.css?v=20260801-face-hero">
 </head>
 <body>
 
@@ -70,6 +70,25 @@
       </div>
     </div>
   </nav>
+
+  <section class="face-hero" id="home" aria-label="首页">
+    <canvas class="face-hero__canvas" id="hero-face-canvas" aria-hidden="true"></canvas>
+    <div class="face-hero__shade" aria-hidden="true"></div>
+    <div class="face-hero__content">
+      <p class="face-hero__eyebrow">AI Product / Agent / Workflow</p>
+      <h1 class="face-hero__title">姜慧男</h1>
+      <p class="face-hero__subtitle">把业务痛点、用户链路和 AI 工具落到可运行的产品里。</p>
+      <div class="face-hero__tags" aria-label="能力标签">
+        <span>AI 产品经理</span>
+        <span>Agent 设计</span>
+        <span>多模态工作流</span>
+      </div>
+    </div>
+    <div class="face-hero__signal" aria-hidden="true">
+      <span>LIGHT</span>
+      <span>ROTATING</span>
+    </div>
+  </section>
 
   <!-- ============================== -->
   <!-- 项目经历 -->
@@ -582,6 +601,7 @@
     </article>
   </div>
 
-  <script src="js/home-align2.js?v=20260722-bird-first-frame-action-local"></script>
+  <script type="module" src="js/hero-face.js?v=20260801-face-hero"></script>
+  <script src="js/home-align2.js?v=20260801-face-hero"></script>
 </body>
 </html>

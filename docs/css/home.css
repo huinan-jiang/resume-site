@@ -289,8 +289,8 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   right: 0;
   z-index: 1001;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(12, 14, 15, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   transition: background 0.5s ease;
 }
@@ -308,7 +308,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: #f7f4ee;
 }
 
 .top-nav__tabs {
@@ -326,14 +326,14 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2rem;
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: var(--color-text-secondary);
+  color: rgba(247, 244, 238, 0.72);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .top-nav__tab:hover {
-  color: var(--color-text);
-  border-color: var(--color-border);
+  color: #f7f4ee;
+  border-color: rgba(247, 244, 238, 0.26);
 }
 
 .top-nav__tab.active {
@@ -352,6 +352,114 @@ section[id] {
 
 .workflow-group[id] {
   scroll-margin-top: 86px;
+}
+
+/* ============================================================
+   FACE HERO
+   ============================================================ */
+.face-hero {
+  position: relative;
+  min-height: calc(100svh - 60px);
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  padding: clamp(7rem, 14vw, 11rem) 2rem clamp(3rem, 8vw, 5rem);
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(4, 5, 6, 0.72) 48%, rgba(5, 3, 2, 0.96) 100%),
+    #030405;
+  color: #f7f4ee;
+}
+
+.face-hero__canvas,
+.face-hero__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.face-hero__canvas {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.face-hero__shade {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.46) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+.face-hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.face-hero__eyebrow {
+  margin-bottom: 1.25rem;
+  color: #d8b85a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.face-hero__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 13vw, 10.5rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+  color: #fffaf2;
+  text-shadow: 0 20px 56px rgba(0, 0, 0, 0.72);
+}
+
+.face-hero__subtitle {
+  max-width: 32rem;
+  margin-top: 1.35rem;
+  color: rgba(247, 244, 238, 0.74);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.face-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.55rem;
+}
+
+.face-hero__tags span {
+  padding: 0.48rem 0.78rem;
+  border: 1px solid rgba(216, 184, 90, 0.42);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: rgba(247, 244, 238, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.face-hero__signal {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1.2rem, 3vw, 2rem);
+  z-index: 2;
+  display: flex;
+  gap: 0.65rem;
+  color: rgba(247, 244, 238, 0.36);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.face-hero__signal span {
+  padding-left: 0.7rem;
+  border-left: 1px solid rgba(216, 184, 90, 0.45);
 }
 
 /* ============================================================
@@ -2608,6 +2716,19 @@ section[id] {
 @media (max-width: 768px) {
   .hero__name { font-size: 3rem; }
 
+  .face-hero {
+    min-height: calc(100svh - 56px);
+    padding: 7rem 1.25rem 4rem;
+  }
+
+  .face-hero__subtitle {
+    max-width: 18rem;
+  }
+
+  .face-hero__signal {
+    display: none;
+  }
+
   .portfolio-guide {
     top: 4.6rem;
     left: 0.75rem;
@@ -2843,6 +2964,9 @@ section[id] {
 
 @media (max-width: 480px) {
   .hero__name { font-size: 2.5rem; }
+  .face-hero__title { font-size: clamp(4rem, 24vw, 6rem); }
+  .face-hero__tags { gap: 0.45rem; }
+  .face-hero__tags span { font-size: 0.72rem; }
   .section { padding: 4rem 0; }
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 220px; }
   .gallery--3col { grid-template-columns: 1fr; grid-auto-rows: 220px; }
