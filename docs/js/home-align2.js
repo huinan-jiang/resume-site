@@ -288,52 +288,52 @@
       ],
       screens: [
         {
-          src: 'assets/images/projects/training/slide-01.png',
+          src: 'assets/images/projects/training/xiaolao-slide-01-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-02.png',
+          src: 'assets/images/projects/training/xiaolao-slide-02-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-03.png',
+          src: 'assets/images/projects/training/xiaolao-slide-03-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-04.png',
+          src: 'assets/images/projects/training/xiaolao-slide-04-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-05.png',
+          src: 'assets/images/projects/training/xiaolao-slide-05-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-06.png',
+          src: 'assets/images/projects/training/xiaolao-slide-06-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-07.png',
+          src: 'assets/images/projects/training/xiaolao-slide-07-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-08.png',
+          src: 'assets/images/projects/training/xiaolao-slide-08-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-09.png',
+          src: 'assets/images/projects/training/xiaolao-slide-09-v2.png',
           title: '',
           text: ''
         },
         {
-          src: 'assets/images/projects/training/slide-10.png',
+          src: 'assets/images/projects/training/xiaolao-slide-10-v2.png',
           title: '',
           text: ''
         }
