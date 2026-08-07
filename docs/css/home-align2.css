@@ -455,10 +455,11 @@ section[id] {
 .face-hero__eyebrow {
   margin-bottom: 0.55rem;
   color: #d8b85a;
-  font-size: 0.62rem;
+  font-size: 0.56rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .face-hero__model {
@@ -480,20 +481,33 @@ section[id] {
 
 .face-hero__tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.8rem;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-top: 0.65rem;
+  color: rgba(247, 244, 238, 0.64);
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .face-hero__tags span {
-  padding: 0.3rem 0.5rem;
-  border: 1px solid rgba(216, 184, 90, 0.42);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.28);
-  color: rgba(247, 244, 238, 0.82);
-  font-size: 0.62rem;
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  backdrop-filter: none;
+}
+
+.face-hero__tags span + span::before {
+  content: "/";
+  margin: 0 0.45rem;
+  color: rgba(216, 184, 90, 0.58);
   font-weight: 700;
-  backdrop-filter: blur(10px);
 }
 
 @keyframes heroStageImageIn {
@@ -3136,8 +3150,8 @@ section[id] {
 
 @media (max-width: 480px) {
   .hero__name { font-size: 2.5rem; }
-  .face-hero__tags { gap: 0.45rem; }
-  .face-hero__tags span { font-size: 0.58rem; }
+  .face-hero__tags { font-size: 0.56rem; }
+  .face-hero__tags span { font-size: inherit; }
   .face-hero__stage { width: min(128vw, calc(100svh - 4.2rem)); margin-right: -18vw; }
   .face-hero__model-wrap { width: 122%; }
   .face-hero__stage-image { width: 28%; height: 28%; }
