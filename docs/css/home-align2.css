@@ -481,13 +481,21 @@ section[id] {
   transform: translate(-50%, -50%);
 }
 
-.face-hero__index a:nth-child(1) { left: 26%; top: 31%; }
-.face-hero__index a:nth-child(2) { left: 72%; top: 27%; }
-.face-hero__index a:nth-child(3) { left: 20%; top: 49%; }
-.face-hero__index a:nth-child(4) { left: 79%; top: 48%; }
-.face-hero__index a:nth-child(5) { left: 31%; top: 68%; }
-.face-hero__index a:nth-child(6) { left: 68%; top: 70%; }
-.face-hero__index a:nth-child(7) { left: 50%; top: 18%; }
+.face-hero__index a:nth-child(odd) {
+  animation: heroBubbleFloat 4.8s ease-in-out 1.2s infinite;
+}
+
+.face-hero__index a:nth-child(even) {
+  animation: heroBubbleFloat 5.4s ease-in-out 1.45s infinite reverse;
+}
+
+.face-hero__index a:nth-child(1) { left: 15%; top: 25%; }
+.face-hero__index a:nth-child(2) { left: 84%; top: 24%; }
+.face-hero__index a:nth-child(3) { left: 9%; top: 46%; }
+.face-hero__index a:nth-child(4) { left: 91%; top: 46%; }
+.face-hero__index a:nth-child(5) { left: 19%; top: 72%; }
+.face-hero__index a:nth-child(6) { left: 82%; top: 73%; }
+.face-hero__index a:nth-child(7) { left: 50%; top: 10%; }
 
 .face-hero__index a:hover,
 .face-hero__index a:focus-visible {
@@ -511,6 +519,11 @@ section[id] {
     visibility: hidden;
     filter: saturate(1.15) brightness(1.14);
   }
+}
+
+@keyframes heroBubbleFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -0.45rem; }
 }
 
 @keyframes heroModelEmerge {
@@ -550,6 +563,10 @@ section[id] {
   .face-hero__stage-image,
   .face-hero__model-wrap,
   .face-hero__model-wrap::before {
+    animation: none;
+  }
+
+  .face-hero__index a {
     animation: none;
   }
 
@@ -2880,13 +2897,13 @@ section[id] {
     font-size: 0.62rem;
   }
 
-  .face-hero__index a:nth-child(1) { left: 31%; top: 30%; }
-  .face-hero__index a:nth-child(2) { left: 68%; top: 28%; }
-  .face-hero__index a:nth-child(3) { left: 26%; top: 48%; }
-  .face-hero__index a:nth-child(4) { left: 73%; top: 49%; }
-  .face-hero__index a:nth-child(5) { left: 34%; top: 67%; }
-  .face-hero__index a:nth-child(6) { left: 66%; top: 68%; }
-  .face-hero__index a:nth-child(7) { left: 50%; top: 20%; }
+  .face-hero__index a:nth-child(1) { left: 22%; top: 24%; }
+  .face-hero__index a:nth-child(2) { left: 78%; top: 24%; }
+  .face-hero__index a:nth-child(3) { left: 14%; top: 44%; }
+  .face-hero__index a:nth-child(4) { left: 86%; top: 45%; }
+  .face-hero__index a:nth-child(5) { left: 24%; top: 70%; }
+  .face-hero__index a:nth-child(6) { left: 76%; top: 70%; }
+  .face-hero__index a:nth-child(7) { left: 50%; top: 12%; }
 
   .face-hero__signal {
     display: none;
