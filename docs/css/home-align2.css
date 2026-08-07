@@ -455,19 +455,13 @@ section[id] {
 
 .face-hero__index {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
   z-index: 4;
-  width: min(30rem, 42vw);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.55rem;
-  transform: translate(-50%, -50%);
   pointer-events: auto;
 }
 
 .face-hero__index a {
+  position: absolute;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -484,11 +478,20 @@ section[id] {
   box-shadow: 0 0 18px rgba(56, 159, 255, 0.18), inset 0 0 18px rgba(56, 159, 255, 0.12);
   backdrop-filter: blur(12px);
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transform: translate(-50%, -50%);
 }
+
+.face-hero__index a:nth-child(1) { left: 26%; top: 31%; }
+.face-hero__index a:nth-child(2) { left: 72%; top: 27%; }
+.face-hero__index a:nth-child(3) { left: 20%; top: 49%; }
+.face-hero__index a:nth-child(4) { left: 79%; top: 48%; }
+.face-hero__index a:nth-child(5) { left: 31%; top: 68%; }
+.face-hero__index a:nth-child(6) { left: 68%; top: 70%; }
+.face-hero__index a:nth-child(7) { left: 50%; top: 18%; }
 
 .face-hero__index a:hover,
 .face-hero__index a:focus-visible {
-  transform: translateY(-2px);
+  transform: translate(-50%, calc(-50% - 2px));
   border-color: rgba(129, 210, 255, 0.9);
   background: rgba(12, 46, 86, 0.62);
   outline: none;
@@ -2868,8 +2871,7 @@ section[id] {
   }
 
   .face-hero__index {
-    width: min(19rem, 76vw);
-    gap: 0.35rem;
+    inset: 0;
   }
 
   .face-hero__index a {
@@ -2877,6 +2879,14 @@ section[id] {
     padding: 0.18rem 0.52rem;
     font-size: 0.62rem;
   }
+
+  .face-hero__index a:nth-child(1) { left: 31%; top: 30%; }
+  .face-hero__index a:nth-child(2) { left: 68%; top: 28%; }
+  .face-hero__index a:nth-child(3) { left: 26%; top: 48%; }
+  .face-hero__index a:nth-child(4) { left: 73%; top: 49%; }
+  .face-hero__index a:nth-child(5) { left: 34%; top: 67%; }
+  .face-hero__index a:nth-child(6) { left: 66%; top: 68%; }
+  .face-hero__index a:nth-child(7) { left: 50%; top: 20%; }
 
   .face-hero__signal {
     display: none;
