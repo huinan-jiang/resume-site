@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/home-align2.css?v=20260807-orbit-index-outer">
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script type="module" src="vendor/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -65,11 +65,16 @@
     <div class="face-hero__content face-hero__content--stage">
       <div class="face-hero__stage" aria-label="IntuitionX 与 3D 模型展示">
         <img class="face-hero__stage-image" src="assets/images/hero/intuitionx-wide.png" alt="IntuitionX 首届跨年黑客松展示图">
-        <div class="face-hero__model-wrap">
+        <div class="face-hero__model-wrap" data-model-state="loading">
+          <img
+            class="face-hero__model-fallback"
+            src="assets/images/hero/intuitionx-stage.png"
+            alt="IntuitionX 项目展示图">
           <model-viewer
             class="face-hero__model"
-            src="assets/models/hi3d-untitled-allparts.glb"
+            src="assets/models/hi3d-web.glb"
             alt="Hi3D 生成的 3D 模型"
+            loading="eager"
             camera-controls
             auto-rotate
             rotation-per-second="20deg"

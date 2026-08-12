@@ -1,3 +1,19 @@
+// Keep a visible fallback until the local 3D model has rendered successfully.
+(function () {
+  const wrapper = document.querySelector('.face-hero__model-wrap');
+  const viewer = wrapper?.querySelector('model-viewer');
+  if (!wrapper || !viewer) return;
+
+  viewer.addEventListener('load', () => {
+    wrapper.dataset.modelState = 'ready';
+  }, { once: true });
+
+  viewer.addEventListener('error', event => {
+    wrapper.dataset.modelState = 'error';
+    console.error('3D model failed to load; keeping the static fallback visible.', event);
+  });
+})();
+
 // ============================================================
 // 0. 单页锚点导航
 // ============================================================

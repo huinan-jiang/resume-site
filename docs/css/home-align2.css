@@ -445,12 +445,37 @@ section[id] {
 }
 
 .face-hero__model {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
   border-radius: 50%;
   background: transparent;
   --poster-color: transparent;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.face-hero__model-fallback {
+  position: absolute;
+  inset: 8%;
+  z-index: 0;
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+  border-radius: 50%;
+  opacity: 1;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.face-hero__model-wrap[data-model-state="ready"] .face-hero__model {
+  opacity: 1;
+}
+
+.face-hero__model-wrap[data-model-state="ready"] .face-hero__model-fallback {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .face-hero__index {
