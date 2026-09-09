@@ -63,9 +63,10 @@
   <section class="face-hero" id="home" aria-label="首页">
     <div class="face-hero__shade" aria-hidden="true"></div>
     <div class="face-hero__content face-hero__content--stage">
-      <div class="face-hero__stage" aria-label="IntuitionX 与 3D 模型展示">
+      <div class="face-hero__stage" aria-label="IntuitionX 与项目索引">
         <img class="face-hero__stage-image" src="assets/images/hero/intuitionx-wide.png" alt="IntuitionX 首届跨年黑客松展示图">
-        <div class="face-hero__model-wrap" data-model-state="loading">
+        <!-- 3D 展示暂时隐藏；保留模型、fallback 与交互代码，便于后续恢复。 -->
+        <div class="face-hero__model-wrap" data-model-state="loading" hidden>
           <img
             class="face-hero__model-fallback"
             src="assets/images/hero/intuitionx-stage.png"

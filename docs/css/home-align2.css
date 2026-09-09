@@ -432,6 +432,11 @@ section[id] {
   animation: heroModelEmerge 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
 }
 
+/* Keep the 3D implementation available while the visual is temporarily disabled. */
+.face-hero__model-wrap[hidden] {
+  display: none !important;
+}
+
 .face-hero__model-wrap::before {
   content: "";
   position: absolute;
