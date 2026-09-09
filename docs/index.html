@@ -38,7 +38,8 @@
     </button>
   </nav>
 
-  <aside class="portfolio-guide" aria-label="面试导览">
+  <!-- 首页导览暂时隐藏；保留结构与脚本，便于后续恢复。 -->
+  <aside class="portfolio-guide" aria-label="面试导览" hidden>
     <button class="portfolio-guide__trigger" type="button" aria-expanded="false" aria-controls="portfolio-guide-tags">导览</button>
     <div class="portfolio-guide__picker" id="portfolio-guide-tags" hidden>
       <span class="portfolio-guide__label">查看方向</span>
@@ -60,7 +61,8 @@
     <button class="portfolio-route__close" type="button" aria-label="关闭推荐项目导览">×</button>
   </nav>
 
-  <section class="face-hero" id="home" aria-label="首页">
+  <!-- 首屏引导暂时隐藏，访问网站后直接进入项目内容。 -->
+  <section class="face-hero" id="home" aria-label="首页" hidden>
     <div class="face-hero__shade" aria-hidden="true"></div>
     <div class="face-hero__content face-hero__content--stage">
       <div class="face-hero__stage" aria-label="IntuitionX 与项目索引">

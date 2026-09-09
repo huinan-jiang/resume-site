@@ -350,6 +350,13 @@ section[id] {
   scroll-margin-top: 86px;
 }
 
+/* Keep the entry-guide implementation available while opening directly on projects. */
+.portfolio-guide[hidden],
+.portfolio-route[hidden],
+.face-hero[hidden] {
+  display: none !important;
+}
+
 .workflow-group[id] {
   scroll-margin-top: 86px;
 }
